@@ -26,7 +26,7 @@ const JSONViewer = ({json,setTab}) => {
   return (
     <div className='flex pr-2 '>
         <div className='px-2 '>
-            <ReactJson indentWidth={1} collapsed src={handleInvalidJson()} theme="monokai" />
+            <ReactJson indentWidth={1} collapsed={false} src={handleInvalidJson()} theme="monokai" />
         </div>
        
     </div>

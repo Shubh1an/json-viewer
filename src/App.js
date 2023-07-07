@@ -14,19 +14,21 @@ function App() {
   const [loader, setLoader] = useState(false);
 
 
-  useEffect(()=>{
-    document.addEventListener('contextmenu', function(event) {
-      event.preventDefault();
-    });
-  },[])
+  // useEffect(()=>{
+  //   document.addEventListener('contextmenu', function(event) {
+  //     event.preventDefault();
+  //   });
+  // },[])
   return (
-    <Routes>
+    <>
     {loader&&<Loader/>}
+    <Routes>
     <Route path='/' element={<AnimatedLogo  />} />
     <Route path='/homepage' element={<HomePage setLoader={setLoader}/>} />
     <Route path='*' element={<Navigate to={<HomePage setLoader={setLoader}/>}/>} />
   
     </Routes>
+    </>
   );
 }
 
