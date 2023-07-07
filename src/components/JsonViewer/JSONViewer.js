@@ -1,8 +1,9 @@
-import React, { useLayoutEffect } from 'react'
+import React, { useLayoutEffect, useState } from 'react'
 import ReactJson from 'react-json-view'
 import { toast } from 'react-toastify'
 
 const JSONViewer = ({json,setTab}) => {
+  const [isCollapse,setIsCollapse]= useState(false)
     console.log("json=>>>>>",Object.keys(json).sort())
     useLayoutEffect(()=>{
       
@@ -24,9 +25,14 @@ const JSONViewer = ({json,setTab}) => {
 
     }
   return (
-    <div className='flex pr-2 '>
+    <div className='flex flex-col pr-2 '>
+      <div className='flex justify-start w-full bg-membio-base-grey p-1 gap-2 mb-2'>
+          <button onClick={()=>setIsCollapse(!isCollapse)} class="border-transparent hover:border-gray-500 hover:border-solid hover:border-1  hover:bg-blue-600 text-black hover:text-white text-xs p-1 rounded">
+        {!isCollapse?"Collapse All":"Extend All"}
+      </button>
+          </div>
         <div className='px-2 '>
-            <ReactJson indentWidth={1} collapsed={false} src={handleInvalidJson()} theme="monokai" />
+            <ReactJson indentWidth={1} collapsed={isCollapse} src={handleInvalidJson()} theme="monokai" />
         </div>
        
     </div>
