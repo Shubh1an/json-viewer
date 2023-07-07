@@ -6,11 +6,14 @@ import reportWebVitals from './reportWebVitals';
 import 'react-tabs/style/react-tabs.css';
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
+import { BrowserRouter } from 'react-router-dom';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <>
+  <BrowserRouter>
     <ToastContainer />
     <App />
+    </BrowserRouter>
   </>
 );
 
