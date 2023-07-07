@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Tab, TabList, TabPanel, Tabs } from 'react-tabs';
 import JSONViewer from '../../components/JsonViewer/JSONViewer';
 import TextViewer from '../../components/TextViewer/TextViewer';
+import JsonCompare from '../../components/JsonCompare/JsonCompare';
 
 const HomePage = ({setLoader}) => {
     const [index,selectedIndex]= useState(1)
@@ -19,6 +20,7 @@ const HomePage = ({setLoader}) => {
     <TabList cols={2}>
       <Tab  style={{color:index===0?"#000":"#fff"}} >Viewer</Tab>
       <Tab style={{color:index===1?"#000":"#fff"}}>Text</Tab>
+      {/* <Tab style={{color:index===1?"#000":"#fff"}}>JSON Compare</Tab> */}
     </TabList>
 
     <TabPanel>
@@ -27,6 +29,9 @@ const HomePage = ({setLoader}) => {
     <TabPanel >
      <TextViewer json={pasteData} setJson={setPasteData} setLoading={setLoader} />
     </TabPanel>
+    {/* <TabPanel >
+     <JsonCompare/>
+    </TabPanel> */}
   </Tabs> 
     </div>
     </div>
