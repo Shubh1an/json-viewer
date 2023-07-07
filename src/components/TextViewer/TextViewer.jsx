@@ -29,13 +29,15 @@ const TextViewer = ({json,setJson,setLoading}) => {
     const handleButtonClick=async(type)=>{
      if (type==='Paste'){
        const res=  await navigator.clipboard.readText()
-      return setJson(res)
+       const sanitizedJsonStr = stripJsonControlCharacters(res);
+      return setJson(sanitizedJsonStr)
         }
         if(type==="Copy"){
         return await navigator.clipboard.writeText(json)
         }
         if(type==="Format"){
-        let fromattedData=JSON.stringify(JSON.parse(json),null,4)
+          const sanitizedJsonStr = stripJsonControlCharacters(json);
+        let fromattedData=JSON.stringify(JSON.parse(sanitizedJsonStr),null,4)
         return setJson(fromattedData)
         }
         if(type==="Remove white Space"){
@@ -51,7 +53,9 @@ const TextViewer = ({json,setJson,setLoading}) => {
         return handleModalOpen()
         }
     }
-
+    function stripJsonControlCharacters(jsonString) {
+      return jsonString.replace(/[\u0000-\u001F\u007F-\u009F]/g, '');
+    }
     const handleModalSubmit=async(url)=>{
       setLoading(true)
       const res= await axios.get(url)
