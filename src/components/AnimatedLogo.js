@@ -12,7 +12,7 @@ const AnimatedLogo = () => {
       clearTimeout(timerId);
       timerId = setTimeout(() => {
         navigate("/homepage");
-      }, 5 * 1000); //5 sec idle time
+      }, 4 * 1000); //5 sec idle time
     };
 
     resetTimer()
