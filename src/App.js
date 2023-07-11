@@ -8,24 +8,25 @@ import Loader from './components/Loader';
 import AnimatedLogo from './components/AnimatedLogo';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import HomePage from './pages/Homepage/HomePage';
+import { useSelector } from 'react-redux';
 
 function App() {
 
-  const [loader, setLoader] = useState(false);
+  const {loader:loading}= useSelector(state=>state)
 
-
-  useEffect(()=>{
-    document.addEventListener('contextmenu', function(event) {
-      event.preventDefault();
-    });
-  },[])
+  // useEffect(()=>{
+  //   document.addEventListener('contextmenu', function(event) {
+  //     event.preventDefault();
+  //   });
+  // },[])
+  console.log("data=>>>>",loading)
   return (
     <>
-    {loader&&<Loader/>}
+    {loading&&<Loader/>}
     <Routes>
     <Route path='/' element={<AnimatedLogo  />} />
-    <Route path='/homepage' element={<HomePage setLoader={setLoader}/>} />
-    <Route path='*' element={<Navigate to={<HomePage setLoader={setLoader}/>}/>} />
+    <Route path='/homepage' element={<HomePage />} />
+    <Route path='*' element={<Navigate to={<HomePage />}/>} />
   
     </Routes>
     </>

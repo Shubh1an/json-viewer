@@ -1,29 +1,13 @@
-import React, { useLayoutEffect, useState } from 'react'
+import React, { useState } from 'react'
 import ReactJson from 'react-json-view'
-import { toast } from 'react-toastify'
+import { useSelector } from 'react-redux'
+import { handleJson } from '../../utilites'
 
-const JSONViewer = ({json,setTab}) => {
+
+const JSONViewer = ({json}) => {
   const [isCollapse,setIsCollapse]= useState(false)
-    console.log("json=>>>>>",Object.keys(json).sort())
-    useLayoutEffect(()=>{
-      
-    })
-    function isValidJSON(jsonString) {
-      try {
-        JSON.parse(jsonString);
-        return true;
-      } catch (error) {
-        return false;
-      }
-    }
-    function handleInvalidJson(){
-      if(isValidJSON(json)){
-        return JSON.parse(json)
-      }
-       setTab(1)
-      return toast.error("Invalid JSON",{position:"top-right"})
-
-    }
+  const {textData}= useSelector(state=>state)
+   
   return (
     <div className='flex flex-col pr-2 '>
       <div className='flex justify-start w-full bg-membio-base-grey p-1 gap-2 mb-2'>
@@ -32,7 +16,8 @@ const JSONViewer = ({json,setTab}) => {
       </button>
           </div>
         <div className='px-2 '>
-            <ReactJson indentWidth={1} collapsed={isCollapse} src={handleInvalidJson()} theme="monokai" />
+            <ReactJson indentWidth={1} collapsed={isCollapse} src={handleJson(textData)} theme="monokai" />
+    
         </div>
        
     </div>
