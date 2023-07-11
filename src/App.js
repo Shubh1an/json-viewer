@@ -22,6 +22,7 @@ function App() {
   console.log("data=>>>>",loading)
   return (
     <>
+    
     {loading&&<Loader/>}
     <Routes>
     <Route path='/' element={<AnimatedLogo  />} />

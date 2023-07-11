@@ -13,33 +13,18 @@ const TextViewer = ({json,setJson}) => {
     const dispatch = useDispatch()
   
    console.log("textData=>>>>>",typeof(textData))
-    const handleModalClose = () => {
-      store.dispatch(setIsUrlModal(false))
-    
-    };
+   
   
     useEffect(()=>{
        
         setHeight(window.innerHeight-85)
     },[])
   
-    const handleModalSubmit=async(url)=>{
     
-      dispatch(setLoading(true))
-      const res= await axios.get(url)
-      console.log("RES=>>.",res)
-      dispatch(setTextData(JSON.stringify(res)))
-      dispatch(setIsUrlModal(false))
-      dispatch(setLoading(false))
-    }
    
   return (
     <>
-     <Modal
-        isOpen={isUrlModalOpen}
-        onClose={handleModalClose}
-        onSubmit={handleModalSubmit}
-      />
+    
       <div className='px-2 bg-membio-black-shade' >
         
           <ButtonTray/>

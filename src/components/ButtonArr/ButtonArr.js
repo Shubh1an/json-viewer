@@ -59,12 +59,14 @@ const ButtonTray = ({id}) => {
            if(type==="Clear"){
             if(id){
                
-                return store.dispatch({id:"compare",data:""})
+                return store.dispatch(setTextData({id:"compare",data:""}))
               }
            return store.dispatch(setTextData(""))
            }
            if(type==="Load Json Data"){
-          
+           if(id){
+           return store.dispatch(setIsUrlModal({isOpen:true,id:"compare"}))
+           }
            return store.dispatch(setIsUrlModal(true))
            }
        }

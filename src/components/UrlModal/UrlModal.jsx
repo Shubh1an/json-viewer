@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { toast } from 'react-toastify';
 
 const Modal = ({ isOpen, onClose, onSubmit }) => {
+  
     const [url,setUrl]= useState("")
     function isValidUrl(url) {
         // Regular expression pattern for URL validation

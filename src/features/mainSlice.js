@@ -36,6 +36,7 @@ const MainSlice= createSlice({
     },
     
     setIsUrlModal:(state,action)=>{
+        console.log("redux-first=>>",action.payload)
         state.isUrlModalOpen= action.payload
     },
     setLoading:(state,action)=>{

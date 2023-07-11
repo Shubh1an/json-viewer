@@ -40,3 +40,9 @@ export function handleJson(jsonString) {
 export const formattedJson=(json)=>{
     return JSON.stringify(json,null,4)
 }
+export const handleModal=(openVar)=>{
+    if(typeof openVar==="object"){
+     return openVar.isOpen
+    }
+    else return openVar
+}
