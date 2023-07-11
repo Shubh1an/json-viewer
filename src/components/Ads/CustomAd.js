@@ -1,27 +1,22 @@
 import React, { useEffect } from 'react';
-import { Helmet } from 'react-helmet';
+import Adsense from "react-adsense"
 
-const AdSenseComponent = () => {
+const AdSenseC = () => {
   useEffect(() => {
     (window.adsbygoogle = window.adsbygoogle || []).push({});
   }, []);
 
   return (
     <div>
-      {/* Place your AdSense ad unit code here */}
-      <Helmet>
-                
-            </Helmet>
-      <ins
-        className="adsbygoogle"
+      <Adsense.Google
+        client="ca-pub-9592098846144362"
+        slot="4670723504"
         style={{ display: 'block' }}
-        data-ad-client="YOUR_ADSENSE_CLIENT_ID"
-        data-ad-slot="YOUR_AD_SLOT_ID"
-        data-ad-format="auto"
-        data-full-width-responsive="true"
-      ></ins>
+        format="auto"
+        responsive="true"
+      />
     </div>
   );
 };
 
-export default AdSenseComponent;
+export default AdSenseC;

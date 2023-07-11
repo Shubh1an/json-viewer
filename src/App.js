@@ -9,7 +9,8 @@ import AnimatedLogo from './components/AnimatedLogo';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import HomePage from './pages/Homepage/HomePage';
 import { useSelector } from 'react-redux';
-import AdSenseComponent from './components/Ads/CustomAd';
+import AdSenseC from './components/Ads/CustomAd';
+
 
 function App() {
 
@@ -32,6 +33,7 @@ function App() {
   
     </Routes>
     {/* <AdSenseComponent/> */}
+    <AdSenseC/>
     </>
   );
 }
