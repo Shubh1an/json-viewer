@@ -14,16 +14,16 @@ const MainSlice= createSlice({
  reducers:{
     setTab:(state,action)=>{
         console.log("redux-statte=>>",action.payload,isValidJSON(state.textData))
-        if(action.payload!==1 && !isValidJSON(state.textData)){
+    //     if(action.payload!==1 && !isValidJSON(state.textData)){
             
-                state.tabIndex=Number(1)
-             toast.error("Invalid JSON",{position:"top-right"})
+    //             state.tabIndex=Number(1)
+    //          toast.error("Invalid JSON",{position:"top-right"})
               
-        }
+    //     }
         
-       else {
+    //    else {
          state.tabIndex=action.payload
-        }
+        // }
     },
     setTextData:(state,action)=>{
         
