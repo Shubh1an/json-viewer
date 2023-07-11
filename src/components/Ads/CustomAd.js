@@ -10,18 +10,7 @@ const AdSenseComponent = () => {
     <div>
       {/* Place your AdSense ad unit code here */}
       <Helmet>
-      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9592098846144362"
-     crossorigin="anonymous"></script>
-
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-9592098846144362"
-     data-ad-slot="4670723504"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
+                
             </Helmet>
       <ins
         className="adsbygoogle"

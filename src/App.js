@@ -31,7 +31,7 @@ function App() {
     <Route path='*' element={<Navigate to={<HomePage />}/>} />
   
     </Routes>
-    <AdSenseComponent/>
+    {/* <AdSenseComponent/> */}
     </>
   );
 }
