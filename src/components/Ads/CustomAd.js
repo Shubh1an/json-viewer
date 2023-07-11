@@ -11,7 +11,7 @@ const AdSenseC = () => {
       <Adsense.Google
         client="ca-pub-9592098846144362"
         slot="4670723504"
-        style={{ display: 'block' }}
+        style={{ width: 500, height: 300, float: 'left' }}
         format="auto"
         responsive="true"
       />
