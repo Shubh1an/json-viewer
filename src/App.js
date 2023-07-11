@@ -17,6 +17,7 @@ function App() {
   const {loader:loading}= useSelector(state=>state)
 
   useEffect(()=>{
+    (window.adsbygoogle = window.adsbygoogle || []).push({});
     document.addEventListener('contextmenu', function(event) {
       event.preventDefault();
     });
