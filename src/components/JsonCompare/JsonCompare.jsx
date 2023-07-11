@@ -6,7 +6,8 @@ import ButtonTray from '../ButtonArr/ButtonArr';
 import store from '../../store';
 import { setTextData } from '../../features/mainSlice';
 import { CompareCode, JsonView } from '../../assets/svgs';
-import { formattedJson, handleJson } from '../../utilites';
+import { formattedJson, handleJson, isValidJSON } from '../../utilites';
+import { toast } from 'react-toastify';
 const JsonCompare = () => {
     const {textData,compareData} =useSelector(state=>state)
     const [isCompare,setIsCompare]= useState(false)
@@ -16,7 +17,9 @@ const JsonCompare = () => {
         setHeight(window.innerHeight-85)
     },[])
     const handleFlip=()=>{
-       
+       if(!isValidJSON(textData)&&!isValidJSON(compareData)){
+        return toast.error("Invalid JSON",{position:"top-right"})
+       }
         setIsCompare(!isCompare)
     }
   return (
