@@ -10,6 +10,7 @@ import { Navigate, Route, Routes } from 'react-router-dom';
 import HomePage from './pages/Homepage/HomePage';
 import { useSelector } from 'react-redux';
 import AdSenseC from './components/Ads/CustomAd';
+import GoogleAds from './components/Ads/CustomAd';
 
 
 function App() {
@@ -17,7 +18,7 @@ function App() {
   const {loader:loading}= useSelector(state=>state)
 
   useEffect(()=>{
-    (window.adsbygoogle = window.adsbygoogle || []).push({});
+   
     document.addEventListener('contextmenu', function(event) {
       event.preventDefault();
     });
@@ -34,7 +35,7 @@ function App() {
   
     </Routes>
     {/* <AdSenseComponent/> */}
-    <AdSenseC/>
+    <GoogleAds slot="4670723504" />
     </>
   );
 }
