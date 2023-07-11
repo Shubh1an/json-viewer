@@ -16,11 +16,11 @@ function App() {
 
   const {loader:loading}= useSelector(state=>state)
 
-  // useEffect(()=>{
-  //   document.addEventListener('contextmenu', function(event) {
-  //     event.preventDefault();
-  //   });
-  // },[])
+  useEffect(()=>{
+    document.addEventListener('contextmenu', function(event) {
+      event.preventDefault();
+    });
+  },[])
   console.log("data=>>>>",loading)
   return (
     <>
